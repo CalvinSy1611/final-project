@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
-import Home from './components/Home';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Favorite from "./components/fav";
 
 function App() {
- 
-    return (
-    <Home/>
-    )
-  }
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/fav" element={<Favorite />} />
+      </Routes>
+    </Router>
+  );
+}
+
 export default App;

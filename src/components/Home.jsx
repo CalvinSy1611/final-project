@@ -10,6 +10,7 @@ import Spidermen from "../assets/spider man.png"
 import Warewolf from "../assets/werewolf.png"
 
 import { FaStar, FaPlay, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -21,14 +22,14 @@ function Home() {
           <div>
             <ul className="flex flex-row space-x-4">
               <li>
-                <a
-                  href="#"
+                <Link
+                to="/"
                   className="relative inline-flex items-center justify-center p-0.5  text-center text-sm text-white rounded-full group bg-gradient-to-r from-merah-hati to-merah-cerah"
                 >
                   <span className="rounded-full relative w-24  transition-all py-1 bg-white dark:bg-merah-hati group-hover:bg-opacity-0">
                     Home
                   </span>
-                </a>
+                  </Link>
               </li>
               <li>
                 <a
@@ -54,14 +55,14 @@ function Home() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                to="/fav"
                   className="relative inline-flex items-center justify-center p-0.5  text-center text-sm text-white rounded-full group bg-gradient-to-r from-merah-hati to-merah-cerah"
                 >
                   <span className="rounded-full relative w-24  transition-all py-1 bg-white dark:bg-merah-hati group-hover:bg-opacity-0">
                     Favorite
                   </span>
-                </a>
+                  </Link>
               </li>
             </ul>
           </div>
