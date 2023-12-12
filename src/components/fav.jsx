@@ -23,6 +23,13 @@ function Favorite() {
     { title: "Batman v Superman", image: Batman1, rating: 3.5 },
     { title: "Black Bird", image: Black_bird, rating: 4 },
     { title: "Black Panther", image: BlackPanther, rating: 4.5 },
+    { title: "Top Gun: Maverick", image: TopGunM, rating: 4 },
+    { title: "Top Gun: Maverick", image: TopGun, rating: 4 },
+    { title: "Avengers Infinity War", image: Avengers, rating: 4.5 },
+    { title: "Spider-Man: No Way Home", image: Spidermen, rating: 5 },
+    { title: "Batman v Superman", image: Batman1, rating: 3.5 },
+    { title: "Black Bird", image: Black_bird, rating: 4 },
+    { title: "Black Panther", image: BlackPanther, rating: 4.5 },
   ];
 
   return (
@@ -122,34 +129,31 @@ function Favorite() {
 
 {/* Movie list */}
 <section className="bg-merah-hati mt-1 py-4">
-  <div className="max-w-screen-xl mx-auto p-10">
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-      {/* My List */}
-      <div className="text-white font-bold text-xl mb-4">My List</div>
-      {favoriteMovies.map((movie, index) => (
-        <div
-          key={index}
-          className="w-full h-40 transform transition-transform hover:scale-110 relative"
-        >
-          <img src={movie.image} className="w-full h-full object-cover" alt={movie.title} />
-          <div className="flex items-end justify-start absolute bottom-0 left-0 w-full h-full px-4 pb-4">
-            <div className="flex flex-col items-start">
-              {/* Display single star rating */}
-              <FaStar size={16} color="#ffc107" />
-              <span className="ml-1 text-white">{movie.rating}</span>
-            </div>
-            <button className="ml-auto bg-transparan hover:bg-zinc-700 text-white font-bold p-2 rounded-full focus:outline-none focus:shadow-outline">
-              <FaBookmark size={20} />
-            </button>
-          </div>
-          <div className="absolute bottom-0 left-0 p-4">
-            <h4 className="text-white font-semi text-lg">{movie.title}</h4>
+        <div className="max-w-screen-xl mx-auto p-10">
+          <div className="text-white font-bold text-xl mb-4">My List</div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+            {favoriteMovies.map((movie, index) => (
+              <div
+                key={index}
+                className="w-full h-48 transform transition-transform hover:scale-110 relative"
+              >
+                <img src={movie.image} className="w-full h-full object-cover rounded-lg" alt={movie.title} />
+                <div className="absolute bottom-0 left-0 w-full h-full px-4 pb-4 flex flex-col items-start">
+                  <div className="flex items-start">
+                    {/* Display single star rating */}
+                    <FaStar size={15} color="#ffc107" />
+                    <span className="ml-1 text-white">{movie.rating}</span>
+                  </div>
+                  <h4 className="text-white font-semi text-lg">{movie.title}</h4>
+                  <button className="mt-auto bg-transparan hover:bg-zinc-700 text-white font-bold p-2 rounded-full focus:outline-none focus:shadow-outline">
+                    <FaBookmark size={15} />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
     </>
   );
 }
